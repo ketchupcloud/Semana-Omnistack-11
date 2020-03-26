@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './global.css';
+
+import Routes from './routes';
+
+// JSX (HTML integrado no JS)
+//Um componente do React é uma função que retorna HTML 
+//Não podemos alterar o valor do estado diretamente (Imutabilidade), 
+//  por isso importamos {useState} do React que retorna 
+//  um Array[valor, funcaoDeAtualizacao] e usamos essa funcaoDeAtualizacao para
+//  mexer nesse valor de fato
 
 function App() {
+//   const [counter, setCounter] = useState(0);
+
+//   function increment() {
+//     setCounter(counter + 1);
+//   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes />
+    // <div>
+    //   <Header> Contador: {counter} </Header>
+    //   <button onClick={increment}>Incrementar</button>
+    // </div>
   );
 }
 
 export default App;
+
+//<Header /> == <Header></Header>
+//caso o texto do Header seja customizável, ele deve ser passado como
+//  <Header title="blablabla" /> OU como uma tag normal HTML
+//  <Header> Happy </Header> e no Header.js iremos utilizar {props.children} 
+//  para pegar esse valor OU apenas {children} 
+//  caso a função utilize diretamente {children}
